@@ -10,6 +10,7 @@ int main(int argc, char** argv)
     return 1;
   }
   InitWindow(500, 300, "BATTERY LEVEL WARNER");
+  SetWindowState(FLAG_WINDOW_TOPMOST);
   SetTargetFPS(60);
   bool leave = false;
   char battery_indicator[255];
