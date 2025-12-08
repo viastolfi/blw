@@ -34,6 +34,13 @@ This script will:
 3. Build the blw executable
 4. Configure i3/Sway window rules (if applicable)
 
+### Manual
+
+If you want to manually download and set this up you can follows the different steps of the `build.sh` file
+
+If there is any platform dependant error while building the project, you can refer to the `Makefile` and add raylib downloading for it. \
+Do not hesitate to make a PR of it, I will review it with pleasure.
+
 ## License
 
 This project uses raylib which is licensed under the zlib/libpng license. See `raylib-5.5_linux_amd64/LICENSE` for details.
