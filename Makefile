@@ -17,7 +17,6 @@ all: $(BUILD)/blw
 
 $(BUILD)/blw: $(OBJ)
 	$(CC) -o $@ $^ -L$(RAYLIB_FOLDER)/lib -l:libraylib.a -lm
-	@$(BUILD)/blw
 
 $(BUILD)/%.o: $(SRC)/%.c
 	@mkdir -p $(BUILD)
