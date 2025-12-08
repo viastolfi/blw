@@ -47,7 +47,7 @@ path=$(pwd)
 (crontab -l 2>/dev/null; echo "* * * * * $(pwd)/blw.sh $(pwd) >> /tmp/blw.log 2>&1") | crontab -
 
 echo "[5/6] - build the blw program"
-make &>/dev/null
+make
 echo "blw program built"
 
 echo "[6/6] - configure window manager (i3/sway)"

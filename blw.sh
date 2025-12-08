@@ -5,8 +5,6 @@ export XAUTHORITY=$HOME/.Xauthority
 
 PROG_PATH=$1
 
-echo $PROG_PATH
-
 STATE_FILE_20="$PROG_PATH/status_file20"
 STATE_FILE_10="$PROG_PATH/status_file10"
 STATE_FILE_5="$PROG_PATH/status_file5"
