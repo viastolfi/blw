@@ -2,10 +2,23 @@
 
 echo "[1/6] - check if cron is installed"
 
+OS=0
+
+if [ -f /etc/os-release ]; then
+  . /etc/os-release
+  OS=$NAME
+fi
+
 which crontab &> /dev/null
 if [ $? -ne 0 ]; then
   echo "cron package not found, installing..."
-  sudo pacman -S cronie
+  if [ $OS == "Arch Linux" ];then
+    echo "Arch Linux OS detected"
+    sudo pacman -S cronie
+  else
+    echo "blw isn't currently implemented for your OS"
+    echo "you can try to install cron from the CLI directly or modify this script"
+  fi
 else
   echo "cron package found"
 fi

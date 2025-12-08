@@ -17,6 +17,9 @@ A lightweight battery monitoring utility that displays persistent popup warnings
 - **Other WMs**: May work but window behavior (floating, always-on-top, sticky) must be configured manually
 - **Desktop Environments**: May function but could conflict with built-in battery notification systems
 
+If your OS / Distro / Window Manager isn't implemented yet, you can make a PR on this repo. \
+Be sure I'll take the time to review and merge it if it's good.
+
 ## Installation
 
 Run the build script to set up everything automatically:
