@@ -1,6 +1,6 @@
 # blw - Battery Level Warner
 
-A lightweight battery monitoring utility that displays persistent popup warnings when battery levels fall below critical thresholds. Built with raylib and designed for Linux systems running X11 or Wayla,d.
+A lightweight battery monitoring utility that displays persistent popup warnings when battery levels fall below critical thresholds. Built with raylib and designed for Linux systems running X11 or Wayland.
 
 ## Requirements
 
