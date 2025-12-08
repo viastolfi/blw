@@ -1,2 +1,3 @@
 *.swp
 build/
+status_file*
