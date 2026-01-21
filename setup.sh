@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "[1/6] - check if cron is installed"
+echo "[1/5] - check if cron is installed"
 
 OS=0
 
@@ -23,7 +23,7 @@ else
   echo "cron package found"
 fi
 
-echo "[2/6] - check if cron service is started"
+echo "[2/5] - check if cron service is started"
 
 systemctl is-active cronie.service &> /dev/null
 if [ $? -ne 0 ];then
@@ -33,7 +33,7 @@ fi
 
 echo "cron service started"
 
-echo "[3/6] - enable cron service"
+echo "[3/5] - enable cron service"
 systemctl is-enabled cronie.service &>/dev/null
 if [ $? -ne 0 ];then
   echo "cron service not enabled, enabling it..."
@@ -41,16 +41,12 @@ if [ $? -ne 0 ];then
 fi
 echo "cron service enabled"
 
-echo "[4/6] - add blw cron to crontab"
+echo "[4/5] - add blw cron to crontab"
 
 path=$(pwd)
-(crontab -l 2>/dev/null; echo "* * * * * $(pwd)/blw.sh $(pwd) >> /tmp/blw.log 2>&1") | crontab -
+(crontab -l 2>/dev/null; echo "* * * * * ~/.local/lib/blw.sh ~/.local/bin ~/.local/state/blw >> /tmp/blw.log") | crontab -
 
-echo "[5/6] - build the blw program"
-make
-echo "blw program built"
-
-echo "[6/6] - configure window manager (i3/sway)"
+echo "[5/5] - configure window manager (i3/sway)"
 
 if command -v sway &> /dev/null && [ -f "$HOME/.config/sway/config" ]; then
   CONFIG_FILE="$HOME/.config/sway/config"
