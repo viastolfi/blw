@@ -43,7 +43,6 @@ echo "cron service enabled"
 
 echo "[4/5] - add blw cron to crontab"
 
-path=$(pwd)
 (crontab -l 2>/dev/null; echo "* * * * * ~/.local/lib/blw.sh ~/.local/bin ~/.local/state/blw >> /tmp/blw.log") | crontab -
 
 echo "[5/5] - configure window manager (i3/sway)"

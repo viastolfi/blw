@@ -22,21 +22,22 @@ Be sure I'll take the time to review and merge it if it's good.
 
 ## Installation
 
-Run the build script to set up everything automatically:
+### Automatic 
 
-```bash
-./build.sh
-```
+You can download and set up blw automatically using this command : 
 
-This script will:
-1. Install and enable cron (cronie) if not present
-2. Add a cron job that runs every minute
-3. Build the blw executable
-4. Configure i3/Sway window rules (if applicable)
+`curl https://raw.githubusercontent.com/viastolfi/blw/refs/heads/main/install.sh | bash`
 
 ### Manual
 
 If you want to manually download and set this up you can follows the different steps of the `build.sh` file
+
+You may have to change some variables in the `setup.sh` so the software works 
+
+```diff
+- (crontab -l 2>/dev/null; echo "* * * * * ~/.local/lib/blw.sh ~/.local/bin ~/.local/state/blw >> /tmp/blw.log") | crontab -
++ (crontab -l 2>/dev/null; echo "* * * * * your_path/blw.sh relative_path_to_exectuable path_to_state_file >> /tmp/blw.log") | crontab -
+```
 
 If there is any platform dependant error while building the project, you can refer to the `Makefile` and add raylib downloading for it. \
 Do not hesitate to make a PR of it, I will review it with pleasure.
