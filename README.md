@@ -30,7 +30,7 @@ You can download and set up blw automatically using this command :
 
 ### Manual
 
-If you want to manually download and set this up you can follows the different steps of the `build.sh` file
+If you want to manually download and set this up you can follows the different steps of the `setup.sh` file
 
 You may have to change some variables in the `setup.sh` so the software works 
 
