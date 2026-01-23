@@ -1,10 +1,17 @@
 #!/bin/bash
 
-version=1.1.0
+version=1.1.1
 
 echo "[01/??] Download source code"
 
-fetch https://github.com/viastolfi/blw/archive/refs/tags/v$version.tar.gz
+if command -v fetch &> /dev/null; then
+  fetch https://github.com/viastolfi/blw/archive/refs/tags/v$version.tar.gz
+elif command -v wget &> /dev/null; then
+  wget https://github.com/viastolfi/blw/archive/refs/tags/v$version.tar.gz
+else
+  echo "No way to download blw source code. Try manual installation"
+  exit 1
+fi
 
 echo "[02/??] Extract source code"
 
